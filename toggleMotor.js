@@ -1,21 +1,4 @@
-class Motor {
-  constructor(name) {
-    this.name = name;
-  }
-  start() {
-    console.log(this.name, 'turning on');
-  }
-  stop() {
-    console.log(this.name, 'turning off');
-  }
-}
-
-const motors = {
-  m1: new Motor('m1'),
-  m2: new Motor('m2'),
-  m3: new Motor('m3'),
-  m3: new Motor('m4')
-};
+const motors = require('./hat');
 
 const isMotorOn = {
   m1: false,
