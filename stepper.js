@@ -8,7 +8,7 @@ var board = new five.Board({
 });
 
 board.on('ready', function() {
-  console.log('board ready');
+  console.log('board readyyyy');
   this.i2cConfig();
   // const pinNumbers = [7, 11, 13, 15];
   const pinNumbers = [7, 0, 2, 3];
@@ -49,7 +49,7 @@ board.on('ready', function() {
   const loop = setInterval(setPins, 1);
   setTimeout(() => {
     clearInterval(loop);
-  }, 10000);
+  }, 15000);
 
   // for (let i = 0; i < 512; i++) {
   //   for (let halfstep = 0; halfstep < 8; halfstep++) {

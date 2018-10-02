@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 
-const toggleMotor = require('./motors');
+const toggleMotor = require('./toggleMotor');
 
 const app = express();
 app.use(

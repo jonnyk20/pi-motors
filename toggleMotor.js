@@ -1,4 +1,4 @@
-const motors = require('./hat');
+const motors = require('./motorHat');
 
 const isMotorOn = {
   m1: false,
