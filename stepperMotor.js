@@ -1,24 +1,9 @@
-class Motor {
-  constructor(name) {
-    this.name = name;
-  }
-  start() {
-    console.log(this.name, 'turning on');
-  }
-  stop() {
-    console.log(this.name, 'turning off');
-  }
-}
+const five = require('johnny-five');
 
 class Stepper {
   constructor(pinNumbers) {
     this.pins = {};
-    pinNumbers.forEach(
-      (num, i) =>
-        (this.pins[`p${i}`] = {
-          write: () => {}
-        })
-    );
+    pinNumbers.forEach((num, i) => (this.pins[`p${i}`] = new five.Pin(num)));
     this.halfStepSeq = [
       [1, 0, 0, 0],
       [1, 1, 0, 0],
@@ -30,7 +15,6 @@ class Stepper {
       [1, 0, 0, 1]
     ];
     this.halfStep = 0;
-    this.stepInterVal = 1;
   }
 
   rotate() {
@@ -40,15 +24,16 @@ class Stepper {
       this.halfStep++;
     }
     for (let pinNumber = 0; pinNumber < 4; pinNumber++) {
+      console.log('halfStep', this.halfStep);
+      console.log('pinNumber', pinNumber);
       this.pins[`p${pinNumber}`].write(
         this.halfStepSeq[this.halfStep][pinNumber]
       );
     }
-    console.log(this.halfStepSeq[this.halfStep]);
   }
 
   start(miliseconds = 5000) {
-    this.rotation = setInterval(this.rotate.bind(this), this.stepInterVal);
+    this.rotation = setInterval(this.rotate.bind(this), 1);
 
     setTimeout(() => {
       this.stop();
@@ -59,12 +44,4 @@ class Stepper {
   }
 }
 
-const motors = {
-  dc1: new Motor('m1'),
-  dc2: new Motor('m2'),
-  dc3: new Motor('m3'),
-  dc4: new Motor('m4'),
-  s1: new Stepper([7, 0, 2, 3])
-};
-
-module.exports = motors;
+module.exports = Stepper;

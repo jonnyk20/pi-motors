@@ -1,4 +1,4 @@
-const motors = require('./motorHat');
+const { dcMotors, stepperMotor } = require('./motors');
 
 const isMotorOn = {
   m1: false,
@@ -8,15 +8,15 @@ const isMotorOn = {
 };
 
 toggleMotor = motorId => {
-  if (!motors[motorId]) {
+  if (!dcMotors[motorId]) {
     return;
   }
   if (isMotorOn[motorId]) {
-    motors[motorId].stop();
+    dcMotors[motorId].stop();
     isMotorOn[motorId] = false;
     return;
   } else {
-    motors[motorId].start();
+    dcMotors[motorId].start();
     isMotorOn[motorId] = true;
   }
 };
