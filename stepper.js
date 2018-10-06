@@ -18,9 +18,6 @@ let i = 0;
 let halfstep = 0;
 
 setPins = () => {
-  // if (i === 511) {
-  //   return;
-  // }
   i++;
   if (halfstep === 7) {
     halfstep = 0;
