@@ -8,15 +8,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
   <script src="script.js" defer></script>
+  <style>
+    button {
+      color: white;
+      background-color: #3b5998;
+      border: solid 1px #3b5998;
+      border-radius: 5px;
+      margin: auto;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Hello world</h1>
-  <button id="dc1" class="motor">DC-1</button>
-  <button id="dc2" class="motor">DC-2</button>
-  <button id="dc3" class="motor">DC-3</button>
-  <button id="dc4" class="motor">DC-4</button>
-  <button id="s1" class="motor">S-1</button>
+  <div>
+    <div>DC-1</div>
+    <button id="dc1-forward">Forward</button>
+    <button id="dc1-reverse">Reverse</button>
+    <button id="dc1-stop">Stop</button>
+  </div>
 </body>
 
 </html>
