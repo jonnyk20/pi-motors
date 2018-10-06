@@ -8,9 +8,7 @@ toggleMotor = request => {
     console.log('no such motor');
     return;
   }
-  // motor[command]();
-  const go = motor[command];
-  console.log('go:', go);
+  motor[command]();
 };
 
 module.exports = toggleMotor;

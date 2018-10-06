@@ -1,9 +1,9 @@
-it coclass Motor {
+class Motor {
   constructor(id) {
     this.id = id;
-    this.forward = command(this.id, 'forward');
-    this.reverse = command(this.id, 'reverse');
-    this.stop = command(this.id, 'stop');
+    this.forward = () => console.log(this.id, 'forward');
+    this.reverse = () => console.log(this.id, 'reverse');
+    this.stop = () => console.log(this.id, 'stop');
   }
 }
 
