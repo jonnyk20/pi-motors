@@ -1,5 +1,5 @@
-// const motors = require('./motors');
-const motors = require('./fakeMotors');
+const motors = require('./motors');
+// const motors = require('./fakeMotors');
 
 const directions = {
   forward: ['dc1', 'dc2'],
