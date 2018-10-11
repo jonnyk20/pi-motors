@@ -18,7 +18,7 @@ const motors = {
 
 board.on('ready', function() {
   console.log('board ready');
-  this.i2cConfig();
+  // this.i2cConfig();
 });
 
 module.exports = motors;
