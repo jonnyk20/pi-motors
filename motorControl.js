@@ -7,7 +7,7 @@ const directions = {
 
 const move = (motors, { direction }, time = 1000) => {
   const [fwdMotor, reverseMotor] = directions[direction];
-  motors[fwdMotor].forward();
+  motors[fwdMotor].forward(255);
   // motors[reverseMotor].reverse();
   setTimeout(() => {
     motors[fwdMotor].stop();
