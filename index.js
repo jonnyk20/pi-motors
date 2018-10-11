@@ -30,5 +30,3 @@ board.on('ready', function() {
     res.end('Command Recieved');
   });
 });
-
-module.exports = motors;
