@@ -1,6 +1,3 @@
-const motors = require('./motors');
-// const motors = require('./fakeMotors');
-
 const directions = {
   forward: ['dc1', 'dc2'],
   reverse: ['dc2', 'dc1'],
@@ -8,7 +5,7 @@ const directions = {
   right: ['dc4', 'dc3']
 };
 
-const move = ({ direction }, time = 1000) => {
+const move = (motors, { direction }, time = 1000) => {
   const [fwdMotor, reverseMotor] = directions[direction];
   motors[fwdMotor].forward();
   // motors[reverseMotor].reverse();
@@ -18,7 +15,7 @@ const move = ({ direction }, time = 1000) => {
   }, time);
 };
 
-toggleMotor = request => {
+toggleMotor = (motors, request) => {
   const { motorId, command } = request;
   const motor = motors[motorId];
   if (!motor) {
